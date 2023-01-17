@@ -32,7 +32,7 @@ def decodage_brut(phrase):
     liste="" #initialise une variable chaîne vide appelée 'liste' qui sera utilisée pour stocker la phrase décodée.
     fragment1="" # initialise une variable chaîne vide appelée 'fragment1' qui sera utilisée pour stocker des parties de la phrase décodée.
     decalage=0 #initialise une variable appelée 'decalage' à 0. Cette variable sera utilisée pour contrôler le nombre de décalages appliqués à chaque caractère de la phrase encodée.
-    dico = open(r"C:\Users\gabri\OneDrive\Documents\NSI\mini projet\Français.txt") #ouvre un fichier texte situé au chemin spécifié et affecte son contenu à la variable 'dico'. Ce fichier texte sera utilisé 
+    dico = open(r"Français.txt") #ouvre un fichier texte situé au chemin spécifié et affecte son contenu à la variable 'dico'. Ce fichier texte sera utilisé 
     #comme un dictionnaire pour vérifier si la phrase décodée contient des mots valides.
     read = dico.read() # lit le contenu du fichier 'dico' et l'affecte à la variable 'read'.
     while decalage <= 256: #démarre une boucle while qui va itérer 256 fois. La boucle continuera jusqu'à ce que la variable 'decalage' soit supérieure à 256.
