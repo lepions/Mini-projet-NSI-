@@ -15,6 +15,31 @@ def encodage2(phrase,decalage):
             #correspondant et l'ajoute à la variable liste
     return liste 
 
+def encodage(phrase,decalage):
+    liste=""
+    for i in range(len(phrase)):
+      num = ord(phrase[i])
+      resultat = int(decalage) + 34
+      lettre = int(num)+int(decalage)
+      if lettre > 126 and lettre <161:
+        liste+=chr(ord(phrase[i])+resultat)
+      else:
+        liste+=chr(ord(phrase[i])+decalage)
+    return liste
+
+
+def decodage(phrase,decalage):
+  liste=""
+  for i in range(len(phrase)):
+    lettre = int(ord(phrase[i]))+int(decalage)
+    if lettre > 126 and lettre <161:
+      liste+=chr(ord(phrase[i])-(int(decalage) + 34))
+    else:
+      liste+=chr(ord(phrase[i])-decalage)
+  return liste
+
+
+
 def fragment(fragment,phrase):
     if fragment in phrase: #vérifie si le fragment se trouve dans la phrase en utilisant l'opérateur in
         print("Oui le fragment est dans la phrase")#imprime "Oui le fragment est dans la phrase" si le fragment est dans la phrase.
