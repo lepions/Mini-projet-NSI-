@@ -63,12 +63,7 @@ def decodage_brut(phrase):
   read = dico.read(
   )  # lit le contenu du fichier 'dico' et l'affecte à la variable 'read'.
   while decalage <= 256:  #démarre une boucle while qui va itérer 256 fois. La boucle continuera jusqu'à ce que la variable 'decalage' soit supérieure à 256.
-    for i in range(len(phrase)):
-      lettre = int(ord(phrase[i])) - int(decalage) #prend la valeur ASCII du caractère actuel dans la variable 'phrase', soustrait la valeur actuelle de 'decalage' et assigne le résultat à une variable appelée 'lettre'.
-      if lettre > 126 and lettre < 161: #vérifie si la variable 'lettre' est supérieure à 126 et inférieure à 161. Si cette condition est vraie, cela signifie que le caractère décodé est un caractère non imprimable ou étendu.
-        liste += chr(ord(phrase[i]) - decalage - 34) # ajoute le caractère correspondant à la valeur ASCII qui résulte de la soustraction de 34 à la valeur actuelle de 'decalage' et de l'indice du caractère actuel de la variable 'phrase', à la variable 'liste'
-      else:
-        liste += chr(ord(phrase[i]) - decalage) # ajoute le caractère correspondant à la valeur ASCII qui résulte de la soustraction de l'indice du caractère actuel de la variable 'phrase' à la valeur actuelle de 'decalage', à la variable 'liste'.
+    liste = decodage(phrase,decalage) #on utilise la fonction decodage
     decalage = decalage + 1  # incrémente la variable 'decalage' de 1.
     fragment1 = liste.split(
       " "
